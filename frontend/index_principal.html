@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central de Chamados - Sistema Completo</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+    
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .interface-card {
+            transition: all 0.3s ease;
+            border: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            height: 100%;
+        }
+        
+        .interface-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        
+        .interface-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        
+        .btn-interface {
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-interface:hover {
+            transform: scale(1.05);
+        }
+        
+        .feature-item {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .stats-section {
+            background: rgba(255,255,255,0.95);
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <h1 class="display-3 fw-bold mb-4">
+                        Central de Chamados
+                    </h1>
+                    <p class="lead mb-4">
+                        Sistema completo de gerenciamento de suporte técnico com interface dedicada para clientes e administradores.
+                    </p>
+                    
+                    <!-- Recursos do Sistema -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="feature-item">
+                                <div class="h5">📱 Interface Responsiva</div>
+                                <small>Acesse de qualquer dispositivo</small>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="feature-item">
+                                <div class="h5">🔄 Tempo Real</div>
+                                <small>Atualizações instantâneas</small>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="feature-item">
+                                <div class="h5">📊 Relatórios</div>
+                                <small>Dashboard completo</small>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="feature-item">
+                                <div class="h5">🔒 Seguro</div>
+                                <small>Dados protegidos</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="row">
+                        <!-- Interface do Cliente -->
+                        <div class="col-md-6 mb-4">
+                            <div class="card interface-card text-center">
+                                <div class="card-body p-4">
+                                    <div class="interface-icon text-primary">
+                                        👤
+                                    </div>
+                                    <h4 class="card-title text-dark">Portal do Cliente</h4>
+                                    <p class="card-text text-muted">
+                                        Abra chamados de suporte e acompanhe o andamento de suas solicitações.
+                                    </p>
+                                    <ul class="list-unstyled text-start small text-muted mb-4">
+                                        <li>✓ Abrir novos chamados</li>
+                                        <li>✓ Acompanhar status</li>
+                                        <li>✓ Filtrar por prioridade</li>
+                                        <li>✓ Histórico completo</li>
+                                    </ul>
+                                    <a href="cliente.html" class="btn btn-primary btn-interface w-100">
+                                        🚀 Acessar Portal
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Interface do Admin -->
+                        <div class="col-md-6 mb-4">
+                            <div class="card interface-card text-center">
+                                <div class="card-body p-4">
+                                    <div class="interface-icon text-warning">
+                                        🛠️
+                                    </div>
+                                    <h4 class="card-title text-dark">Painel Admin</h4>
+                                    <p class="card-text text-muted">
+                                        Gerencie todos os chamados, visualize relatórios e controle o sistema.
+                                    </p>
+                                    <ul class="list-unstyled text-start small text-muted mb-4">
+                                        <li>✓ Gerenciar chamados</li>
+                                        <li>✓ Dashboard completo</li>
+                                        <li>✓ Relatórios e gráficos</li>
+                                        <li>✓ Exportar dados</li>
+                                    </ul>
+                                    <a href="admin.html" class="btn btn-warning btn-interface w-100">
+                                        🔧 Acessar Admin
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Estatísticas do Sistema -->
+                    <div class="stats-section text-dark">
+                        <h5 class="text-center mb-4">📊 Status do Sistema</h5>
+                        <div class="row text-center">
+                            <div class="col-4">
+                                <div class="h3 text-primary" id="total-chamados-home">-</div>
+                                <div class="small">Total</div>
+                            </div>
+                            <div class="col-4">
+                                <div class="h3 text-success" id="abertos-home">-</div>
+                                <div class="small">Abertos</div>
+                            </div>
+                            <div class="col-4">
+                                <div class="h3 text-secondary" id="resolvidos-home">-</div>
+                                <div class="small">Resolvidos</div>
+                            </div>
+                        </div>
+                        <div class="text-center mt-3">
+                            <small class="text-muted">
+                                🔄 Última atualização: <span id="ultima-atualizacao">Carregando...</span>
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Recursos -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="display-5 fw-bold text-dark">🚀 Recursos do Sistema</h2>
+                    <p class="lead text-muted">Tudo que você precisa para gerenciar suporte técnico</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="display-4 text-primary mb-3">📱</div>
+                            <h5>Interface Intuitiva</h5>
+                            <p class="text-muted">Design moderno e responsivo que funciona em qualquer dispositivo.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="display-4 text-success mb-3">⚡</div>
+                            <h5>Performance</h5>
+                            <p class="text-muted">Sistema otimizado com carregamento rápido e navegação fluida.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="display-4 text-info mb-3">📊</div>
+                            <h5>Relatórios</h5>
+                            <p class="text-muted">Dashboard completo com gráficos e métricas de desempenho.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h5>Central de Chamados</h5>
+                    <p class="mb-0 small text-muted">
+                        Sistema desenvolvido com Node.js, Express, SQLite e Bootstrap
+                    </p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="btn-group" role="group">
+                        <a href="cliente.html" class="btn btn-outline-light btn-sm">
+                            👤 Portal Cliente
+                        </a>
+                        <a href="admin.html" class="btn btn-outline-light btn-sm">
+                            🛠️ Painel Admin
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Script para carregar estatísticas na página inicial
+        const API_URL = 'http://localhost:3000/api/chamados';
+        
+        async function carregarEstatisticasHome() {
+            try {
+                const response = await fetch(API_URL);
+                
+                if (response.ok) {
+                    const chamados = await response.json();
+                    const total = chamados.length;
+                    const abertos = chamados.filter(c => c.status === 'Aberto' || c.status === 'Em Andamento').length;
+                    const resolvidos = chamados.filter(c => c.status === 'Fechado').length;
+                    
+                    document.getElementById('total-chamados-home').textContent = total;
+                    document.getElementById('abertos-home').textContent = abertos;
+                    document.getElementById('resolvidos-home').textContent = resolvidos;
+                    
+                    const agora = new Date().toLocaleString('pt-BR');
+                    document.getElementById('ultima-atualizacao').textContent = agora;
+                } else {
+                    throw new Error('Erro ao conectar com o servidor');
+                }
+            } catch (error) {
+                console.error('Erro ao carregar estatísticas:', error);
+                document.getElementById('total-chamados-home').textContent = '!';
+                document.getElementById('abertos-home').textContent = '!';
+                document.getElementById('resolvidos-home').textContent = '!';
+                document.getElementById('ultima-atualizacao').textContent = 'Erro de conexão';
+            }
+        }
+        
+        // Carregar estatísticas ao carregar a página
+        document.addEventListener('DOMContentLoaded', () => {
+            carregarEstatisticasHome();
+            
+            // Atualizar estatísticas a cada 30 segundos
+            setInterval(carregarEstatisticasHome, 30000);
+        });
+        
+        // Adicionar efeito de smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
